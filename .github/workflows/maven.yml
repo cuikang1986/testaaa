@@ -56,4 +56,6 @@ jobs:
     - name: Test with Maven
       run: mvn -B test -Dmaven.test.skip=false
     - name: Build with Maven
+      needs: 
+       -Test with Maven
       run: mvn -B package --file pom.xml
