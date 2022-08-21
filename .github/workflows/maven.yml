@@ -24,9 +24,9 @@ jobs:
 
     steps:
     - run: echo "github.event_name by a ${{ github.event_name }} "
-     - run: echo "github.event.action by a ${{ github.event.action }} "
-     - run: echo "github.event.label.name  by a ${{ github.event.label.name  }} "
-     - run: echo "github.event.pull_request.labels  by a ${{ github.event.pull_request.labels.*.name  }} "
+    - run: echo "github.event.action by a ${{ github.event.action }} "
+    - run: echo "github.event.label.name  by a ${{ github.event.label.name  }} "
+    #- run: echo "github.event.pull_request.labels  by a ${{ github.event.pull_request.labels.*.name  }} "
     - run: echo "runner.os on a ${{ runner.os }} server hosted by GitHub!"
     - run: echo " branch is ${{ github.ref }} and ${{github.head_ref}} ${{github.sha}}your repository is ${{ github.repository }}."
 
