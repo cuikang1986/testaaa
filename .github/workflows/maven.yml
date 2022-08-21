@@ -9,7 +9,7 @@ on:
     types:
       - created
   pull_request:
-    types: [opened ,created ]
+    types: [opened ,created ,reopened]
     branches: 
       - 'main'
       - '**'
