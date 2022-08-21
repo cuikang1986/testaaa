@@ -5,9 +5,6 @@ name: Java CI with Maven
 
 
 on:
-  label:
-    types:
-      - created
   pull_request:
     types: [opened ,created ,reopened]
     branches: 
@@ -56,6 +53,4 @@ jobs:
     - name: Test with Maven
       run: mvn -B test -Dmaven.test.skip=false
     - name: Build with Maven
-      needs: 
-       -Test with Maven
       run: mvn -B package --file pom.xml
