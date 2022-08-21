@@ -8,9 +8,8 @@ on:
   pull_request:
     types: [opened ,created ,reopened]
     branches: 
-      - 'main'
       - '**'
-      - '!**_skip'
+      - '!**skip'
     
 jobs:
   specific_review_requested:
