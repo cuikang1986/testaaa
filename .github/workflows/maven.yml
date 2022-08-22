@@ -56,7 +56,7 @@ jobs:
     - name: Build WSC2
       uses: actions/checkout@v2
       with:
-        repository: cuikang1986/wsc@master
+        repository: cuikang1986/wsc
         ref: master
         path: ~/.m2
         
