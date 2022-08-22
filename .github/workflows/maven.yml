@@ -21,12 +21,15 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        maven: [ '3.5.4', '3.6.3', '3.8.2' ]
+        java: [ '8', '11', '16']
     steps:
-    - run: echo "github.event_name by a ${{ github.event_name }} "
-    - run: echo "github.event.action by a ${{ github.event.action }} "
-    - run: echo "github.event.label.name  by a ${{ github.event.label.name  }} "
-    - run: echo "github.event.pull_request.labels.*.name  by a ${{ github.event.pull_request.labels.*.name }} "
+    - run: echo "github.event_name by  ${{ github.event_name }} "
+    - run: echo "github.event.action by  ${{ github.event.action }} "
+    - run: echo "github.event.label.name  by  ${{ github.event.label.name  }} "
+    - run: echo "github.event.pull_request.labels.*.name  by  ${{ github.event.pull_request.labels.*.name }} "
     - run: echo "runner.os on a ${{ runner.os }} server hosted by GitHub!"
     - run: echo " branch is ${{ github.ref }} and ${{github.head_ref}} ${{github.sha}}your repository is ${{ github.repository }}."
 
@@ -44,6 +47,14 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
+    - name: Cache local Maven repository
+      uses: actions/cache@v2
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+        restore-keys: |
+            ${{ runner.os }}-maven-
+            
     - name: Test with Maven
       run: mvn -B test -Dmaven.test.skip=false
 
