@@ -56,7 +56,8 @@ jobs:
     - name: Build WSC2
       uses: actions/checkout@v2
       with:
-        repository: cuikang1986/wsc
+        repository: JamesIves/github-pages-deploy-action
+      #  repository: cuikang1986/wsc
         ref: master
         path: ~/.m2
     - name: install with Maven
