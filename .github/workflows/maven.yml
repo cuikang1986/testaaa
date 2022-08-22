@@ -46,7 +46,20 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
+    - name: Checkout
+      uses: actions/checkout@master
 
+    - name: Build WSC
+      uses: cuikang1986/wsc@master
+      
+    - name: Build WSC2
+      uses: actions/checkout@v2
+      with:
+      
+        repository: cuikang1986/wsc@master
+        ref: master
+        path: ~/.m2
+        
     - name: Cache local Maven repository
       uses: actions/cache@v2
       with:
