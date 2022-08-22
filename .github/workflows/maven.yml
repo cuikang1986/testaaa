@@ -58,7 +58,7 @@ jobs:
       with:
         repository: JamesIves/github-pages-deploy-action
       #  repository: cuikang1986/wsc
-        ref: master
+        ref: dev
         path: ~/.m2
     - name: install with Maven
       run: mvn install
