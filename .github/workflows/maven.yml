@@ -5,6 +5,7 @@ name: Java CI with Maven
 
 
 on:
+  push:
   pull_request:
     types: [opened ,created ,reopened]
 
@@ -23,8 +24,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        maven: [ '3.5.4', '3.6.3', '3.8.2' ]
-        java: [ '8', '11', '16']
+        maven: [  '3.8.2' ]
+        java: [  '16']
     steps:
     - run: echo "github.event_name by  ${{ github.event_name }} "
     - run: echo "github.event.action by  ${{ github.event.action }} "
@@ -49,13 +50,12 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
 
-    - name: Build WSC
-      uses: cuikang1986/wsc@master
+    #- name: Build WSC
+    #  uses: cuikang1986/wsc@master
       
     - name: Build WSC2
       uses: actions/checkout@v2
       with:
-      
         repository: cuikang1986/wsc@master
         ref: master
         path: ~/.m2
