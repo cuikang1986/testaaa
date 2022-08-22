@@ -59,7 +59,10 @@ jobs:
         repository: cuikang1986/wsc
         ref: master
         path: ~/.m2
+    - name: install with Maven
       run: mvn install
+      
+      
     - name: Cache local Maven repository
       uses: actions/cache@v2
       with:
