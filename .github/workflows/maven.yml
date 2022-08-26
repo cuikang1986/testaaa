@@ -40,16 +40,20 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
 
-    #- name: Build WSC
-    #  uses: cuikang1986/wsc@master
+    - name: Build WSC
+      if: "!(contains(github.event.pull_request.labels.*.name, 'b3')"
+      uses: cuikang1986/wsc@master
+      
       
     - name: Build WSC2
+      if: "!(contains(github.event.pull_request.labels.*.name, 'b1')"
       uses: actions/checkout@v2
       with:
         repository: cuikang1986/wsc
         ref: master
         path: ~/.m2
     - name: install with Maven
+      if: "!(contains(github.event.pull_request.labels.*.name, 'b2')"
       run: mvn install
       
       
