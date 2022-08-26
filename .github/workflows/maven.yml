@@ -31,8 +31,8 @@ jobs:
     - run: echo "github.workspace The ${{ github.repository }} "
     - run: echo "🖥️ The workflow is now ready to test your code on the runner."
     
-    - run: echo 2 : ${{ env.B2 }}
-    - run: echo 3 : ${{ env.B3 }}
+    - run: echo 2= ${{ env.B2 }}
+    - run: echo 3= ${{ env.B3 }}
     
     
     
