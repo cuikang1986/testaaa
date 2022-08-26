@@ -10,7 +10,8 @@ on:
     
 jobs:
   build:
-    if: "!contains(github.head_ref, '_skip')"
+    - run: echo "github.event.pull_request.title by  ${{ github.event.pull_request.title }} "
+    if: "!contains(github.event.pull_request.title, '_skip')"
     runs-on: ubuntu-latest
 
     steps:
