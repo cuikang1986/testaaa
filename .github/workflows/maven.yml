@@ -8,8 +8,8 @@ on:
       - '!**_skip'
 
 env:
- B2: 'b2'
- B3: b3 
+ B2:'b2'
+ B3:b3 
 jobs:
   build:
     if: "!contains(github.event.pull_request.title, '[skip]')"
