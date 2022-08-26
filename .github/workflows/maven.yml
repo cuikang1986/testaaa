@@ -4,7 +4,9 @@ on:
   pull_request:
     types: [opened ,created ,reopened]
     branches-ignore:    
-      - '**skip'
+      - '*skip'
+  tags:
+    - '*'
     
 jobs:
   specific_review_requested:
