@@ -59,7 +59,7 @@ jobs:
         
     - name: install with Maven
      
-      if: contains(github.event.pull_request.labels.*.name, 'b3')
+      if: ${{contains(github.event.pull_request.labels.*.name,  env.B3)}}
       run: mvn install
       
       
