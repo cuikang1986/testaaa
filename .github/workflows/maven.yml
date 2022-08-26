@@ -2,11 +2,10 @@ name: Java CI with Maven
 on:
   pull_request:
     types: [opened ,created ,reopened]
-    branches:    
-      - '!*skip'
-      - '*'
-    tags:
-      - '*'
+    branches:
+      - '**'
+      - '!**_skip'
+
     
 jobs:
   specific_review_requested:
