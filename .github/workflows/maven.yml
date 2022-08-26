@@ -1,26 +1,22 @@
 name: Java CI with Maven
 on:
+  push: 
   pull_request:
     types: [opened ,created ,reopened]
-    branches:    
-      - '!*skip'
-      - '*'
-    tags:
-      - '*'
+    branches:
+      - '**'
+      - '!**_skip'
+
     
 jobs:
-  specific_review_requested:
-    runs-on: ubuntu-latest
-    if: ${{ github.event.requested_team.name == 'octo-team'}}
-    steps:
-      - run: echo 'A review from octo-team was requested'
-      
   build:
-
+    if: "!contains(github.head_ref, '_skip')"
     runs-on: ubuntu-latest
+
     steps:
-    - run: echo "github.event_name by  ${{ github.event_name }} "
-    - run: echo "github.event.action by  ${{ github.event.action }} "
+    - run: echo "github.ref by  ${{ github.ref }} "
+    - run: echo "github.head_ref by  ${{ github.head_ref }} "
+    #- run: echo "github.event.action by  ${{ github.event.action }} "
     - run: echo "github.event.label.name  by  ${{ github.event.label.name  }} "
     - run: echo "github.event.pull_request.labels.*.name  by  ${{ github.event.pull_request.labels.*.name }} "
     - run: echo "runner.os on a ${{ runner.os }} server hosted by GitHub!"
