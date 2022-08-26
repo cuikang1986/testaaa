@@ -10,11 +10,12 @@ on:
     
 jobs:
   build:
-    - run: echo "github.event.pull_request.title by  ${{ github.event.pull_request.title }} "
-    if: "!contains(github.event.pull_request.title, '_skip')"
+
     runs-on: ubuntu-latest
 
     steps:
+    - run: echo "github.event.pull_request.title by  ${{ github.event.pull_request.title }} "
+      if: "!contains(github.event.pull_request.title, '_skip')"
     - run: echo "github.ref by  ${{ github.ref }} "
     - run: echo "github.head_ref by  ${{ github.head_ref }} "
     #- run: echo "github.event.action by  ${{ github.event.action }} "
