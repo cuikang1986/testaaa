@@ -5,8 +5,8 @@ on:
     types: [opened ,created ,reopened]
     branches-ignore:    
       - '*skip'
-  tags:
-    - '*'
+    tags:
+      - '*'
     
 jobs:
   specific_review_requested:
