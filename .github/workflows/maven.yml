@@ -9,18 +9,12 @@ on:
 
     
 jobs:
-  specific_review_requested:
-    runs-on: ubuntu-latest
-    if: ${{ github.event.requested_team.name == 'octo-team'}}
-    steps:
-      - run: echo 'A review from octo-team was requested'
-      
   build:
 
     runs-on: ubuntu-latest
     steps:
     - run: echo "github.ref by  ${{ github.ref }} "
-     if: contains(github.ref, '_skip')
+      if: contains(github.ref, '_skip')
     - run: echo "github.event_name by  ${{ github.event_name }} "
     #- run: echo "github.event.action by  ${{ github.event.action }} "
     - run: echo "github.event.label.name  by  ${{ github.event.label.name  }} "
