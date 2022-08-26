@@ -49,7 +49,7 @@ jobs:
 
       
     - name: Build WSC2
-      if: contains(github.event.pull_request.labels.*.name, ${{ env.B2 }})
+      if: "contains(github.event.pull_request.labels.*.name, ${{ env.B2 }})"
       uses: actions/checkout@v2
       with:
         repository: cuikang1986/wsc
@@ -59,7 +59,7 @@ jobs:
         
     - name: install with Maven
      
-      if: contains(github.event.pull_request.labels.*.name, ${{ env.B3 }})
+      if: contains(github.event.pull_request.labels.*.name, 'b3')
       run: mvn install
       
       
