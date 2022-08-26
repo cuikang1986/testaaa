@@ -1,5 +1,6 @@
 name: Java CI with Maven
 on:
+  push: 
   pull_request:
     types: [opened ,created ,reopened]
     branches:
@@ -18,6 +19,8 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
+    - run: echo "github.event_name by  ${{ github.head_ref }} "
+    # if: contains(github.head_ref, 'dependabot/npm_and_yarn')
     - run: echo "github.event_name by  ${{ github.event_name }} "
     #- run: echo "github.event.action by  ${{ github.event.action }} "
     - run: echo "github.event.label.name  by  ${{ github.event.label.name  }} "
