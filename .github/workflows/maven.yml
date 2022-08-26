@@ -10,7 +10,7 @@ on:
     types: [opened ,created ,reopened]
 
     branches-ignore:    
-      - '**skip'
+      - '!**skip'
     
 jobs:
   specific_review_requested:
