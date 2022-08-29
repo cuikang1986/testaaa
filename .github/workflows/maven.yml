@@ -27,7 +27,7 @@ jobs:
     - run: echo "🖥️ The workflow is now ready to test your code on the runner."
    
     - run: echo ${{github.event.pull_request.labels.*.name}}
-    - run: echo ${{github.event.pull_request.labels.*.name[0]}}
+    - run: echo ${{toJson(github.event.pull_request.labels.*.name)}}
     - run: echo ${{github.event.pull_request.labels.*.name[1]}}
     - run: echo ${{github.event.pull_request.labels.*.name[2]}}
     
