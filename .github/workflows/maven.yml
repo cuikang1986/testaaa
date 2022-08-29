@@ -28,9 +28,9 @@ jobs:
    
     - run: echo "🖥️ The workflow is now ready to test your code on the runner."
    
-    - run: echo ${{github.event.workflow_dispatch.labels.*.name}}
+    - run: echo ${{github.event.pull_request.labels.*.name}}
     - run: echo ${{toJson(github.event.workflow_dispatch.labels.*.name)}}
-    
+    - run: echo ${{github.event.pull_request.labels[0].name}}
     
     - run: echo 1= "${{contains(github.event.workflow_dispatch.labels.*.name, 'b1')}}"
     - run: echo 2= "${{contains(github.event.workflow_dispatch.labels.*.name, 'b2')}}"
