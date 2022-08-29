@@ -6,7 +6,7 @@ on:
     branches:
       - '**'
       - '!**_skip'
-
+  workflow_dispatch:
 env:
  B2: 'b2'
  B3: "b3" 
