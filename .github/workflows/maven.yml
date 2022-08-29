@@ -1,6 +1,7 @@
 name: Java CI with Maven
 on:
   workflow_dispatch:
+  pull_request:
 env:
  B2: 'b2'
  B3: "b3" 
