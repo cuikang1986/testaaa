@@ -35,9 +35,13 @@ jobs:
     - run: echo 2= ${{contains(github.event.pull_request.labels.*.name, 'b2')}}
     - run: echo 3= ${{contains(github.event.pull_request.labels.*.name, 'b3')}}
     
+    - name: Checkout
+      id: aaa
+      run: echo "::set-output name=tag::${PULL_REQUEST_HEAD_SHA} |cut -c -12 "
+      
+    - run: echo ${{ steps.aaa.output.tag }}
     
     - name: Checkout
-      if: contains(github.event.pull_request.labels.*.name, 'b1')
       uses: actions/checkout@master
     
     - name: Set up JDK 11
