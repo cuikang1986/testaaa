@@ -37,9 +37,12 @@ jobs:
     
     - name: Checkout
       id: aaa
-      run: echo "::set-output name=tag::${PULL_REQUEST_HEAD_SHA} |cut -c -12 "
+      run: |
+        echo "::set-output name=tag::${PULL_REQUEST_HEAD_SHA} |cut -c -12 "
+        echo "::set-output name=tag2::${GITHUB_SHA} |cut -c -12 "
       
     - run: echo ${{ steps.aaa.output.tag }}
+    - run: echo ${{ steps.aaa.output.tag2 }}
     
     - name: Checkout
       uses: actions/checkout@master
