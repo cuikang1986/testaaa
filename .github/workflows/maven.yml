@@ -1,8 +1,9 @@
 name: Java CI with Maven
 on:
+  push:
   workflow_dispatch:
   pull_request: 
-    types: reopened
+    types: [open, reopened, synchronized]
 env:
  B2: 'b2'
  B3: "b3" 
@@ -29,7 +30,7 @@ jobs:
     - run: echo "🖥️ The workflow is now ready to test your code on the runner."
    
     #- run: echo ${{github.event.workflow_dispatch.labels[0].name}}
-    - run: echo ${{toJson(github.event.inputs)}}
+    - run: echo ${{toJson(github.event.pull_request.labels.*.name)}}
     #- run: echo ${{github.event.pull_request.labels[0].name}}
     
     - run: echo 1= "${{contains(github.event.event.labels.*.name, 'b1')}}"
