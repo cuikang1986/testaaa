@@ -22,17 +22,6 @@
 * 集成常用工具，如 Copiers、CsvUtils、DateUtils……
 
 
-## 运行
-### 创建项目
-运行以下脚本即可创建项目，脚本中包含 `${groupId}`、`${artifactId}`、`${version}`、`${package}` 4 个变量，可根据实际情况灵活改变。
-
-| 变量 | 必填 | 默认值
-| :-- | :-- | :-- | 
-| groupId | 是 | 无
-| artifactId | 是 | 无
-| version | 是 | 1.0.0-SNAPSHOT 
-| package | 是 | 无
-
 ```
 mvn archetype:generate -DarchetypeGroupId=com.github.drtrang -DarchetypeArtifactId=maven-archetype-springboot -DarchetypeVersion=1.0.1 -DinteractiveMode=false -DarchetypeCatalog=local -DgroupId=${groupId} -DartifactId=${artifactId} -Dversion=${version} -Dpackage=${package}
 ```
