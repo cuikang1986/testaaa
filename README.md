@@ -37,18 +37,6 @@ mvn spring-boot:run
 http://localhost:8080
 ```
 
-项目自带 Swagger2，便于查看文档和调试：
-```html
-http://localhost:8080/swagger-ui.html
-```
-
-![swagger2](https://user-images.githubusercontent.com/13851701/29209263-34dcbc78-7ec0-11e7-85c2-4f6cd63c2fae.png)
-
-
-## 详细介绍
-[Spring Boot 的 Maven 项目原型](http://blog.trang.space/2017/08/11/Spring%20Boot%20%E7%9A%84%20Maven%20%E9%A1%B9%E7%9B%AE%E5%8E%9F%E5%9E%8B/)
-
-
 ## 集成 Intellij IDEA
 * 新建项目 `File > New > Project`
 * 选择 Maven 并勾选 `Create from archetype`
