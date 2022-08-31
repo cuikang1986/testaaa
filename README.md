@@ -35,33 +35,4 @@ mvn spring-boot:run
 启动后即可通过浏览器访问该项目，默认端口号为 **8080**：
 ```html
 http://localhost:8080
-```
 
-## 集成 Intellij IDEA
-* 新建项目 `File > New > Project`
-* 选择 Maven 并勾选 `Create from archetype`
-* 点击 `Add Archetype` 按钮
-* 填写 `GroupId`: `com.github.drtrang`
-* 填写 `ArtifactId`: `maven-archetype-springboot`
-* 填写 `Version`: `1.0.1`
-* 点击 `OK` 按钮
-* 选择 `maven-archetype-springboot:1.0.1` 并点击 `Next` 按钮
-* 填写项目属性，创建项目
-
-**Note：`Add Archetype` 步骤只需执行一次，以后可直接选择 `maven-archetype-springboot:1.0.1`**
-
-![idea2](https://user-images.githubusercontent.com/13851701/29200507-7562009c-7e88-11e7-9cbf-2329da6f037b.png)
-
-
-## Change Log
-[Release Notes](https://github.com/drtrang/maven-archetype-springboot/releases)
-
-
-## TODO
-任何意见和建议可以提 [ISSUE](https://github.com/drtrang/maven-archetype-springboot/issues)，我会酌情加到 [TODO List](https://github.com/drtrang/maven-archetype-springboot/blob/master/TODO.md)，一般情况一周内迭代完毕。
-
-
-## About Me
-QQ：349096849<br>
-Email：donghao.l@hotmail.com<br>
-Blog：[Trang's Blog](http://blog.trang.space)
