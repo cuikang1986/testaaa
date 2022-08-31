@@ -1,9 +1,8 @@
 name: Java CI with Maven
 on:
-  push:
   workflow_dispatch:
   pull_request: 
-    types: [open, reopened, synchronized]
+    types: [opened, reopened, synchronize]
 env:
  B2: 'b2'
  B3: "b3" 
@@ -60,17 +59,17 @@ jobs:
         path: ~/.m2
         
         
-    - name: install with Maven
-      run: mvn install
+    #- name: install with Maven
+    #  run: mvn install
       
       
-    - name: Cache local Maven repository
-      uses: actions/cache@v2
-      with:
-        path: ~/.m2/repository
-        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-        restore-keys: |
-            ${{ runner.os }}-maven-
+   # - name: Cache local Maven repository
+   #   uses: actions/cache@v2
+   #   with:
+  #      path: ~/.m2/repository
+   #     key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+   #     restore-keys: |
+    #        ${{ runner.os }}-maven-
             
   #  - name: Test with Maven
     #  run: mvn -B test -Dmaven.test.skip=false
